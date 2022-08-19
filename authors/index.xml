@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on PeiKeWang&#39;s WebSite</title>
+    <link>/authors/</link>
+    <description>Recent content in Authors on PeiKeWang&#39;s WebSite</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2022&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 17 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PeiKe Wang</title>
+      <link>/authors/peikewang/</link>
+      <pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/peikewang/</guid>
+      <description>Self Introduction My name is Peike Wang, a computer science and technology graduate student at Beijing University of Technology. I am currently in the $ \lfloor e\rfloor$ grade. The research direction is to optimize algorithms and neural architecture search.
+I am a native of Weinan, Shaanxi, and currently live in Beijing. I like math, astrophysics, and computer-related content. I play online games occasionally, but I am not good at sports, like food and movies. If I don&amp;rsquo;t go to school, I will stay at home because I don&amp;rsquo;t like to go outside (unless I go out with my girlfriend or go to the aquarium or museum).</description>
+    </item>
+    
+    <item>
+      <title>Hugo Authors</title>
+      <link>/authors/hugo-authors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/hugo-authors/</guid>
+      <description>Vestibulum vel arcu Donec interdum justo sed posuere imperdiet. Quisque nec mauris eu erat mattis egestas in vitae nisl. Sed nisl augue, congue sed quam quis, tempor tempus nibh. Pellentesque accumsan in quam a interdum. Morbi iaculis venenatis lacinia. Mauris quis nisl vitae nisi mollis placerat id vel ligula. Integer vitae arcu ac leo iaculis rhoncus id vitae dolor. Fusce quis nisl tincidunt, vulputate dolor quis, mollis massa. Donec congue velit at risus cursus, eu auctor dolor rhoncus.</description>
+    </item>
+    
+  </channel>
+</rss>
