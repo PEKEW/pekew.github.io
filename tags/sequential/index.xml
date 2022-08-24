@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sequential on PeiKeWang&#39;s WebSite</title>
+    <link>/tags/sequential/</link>
+    <description>Recent content in Sequential on PeiKeWang&#39;s WebSite</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2022&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 24 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sequential/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sequential,MoudleList,和ModuleDict 1</title>
+      <link>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/</link>
+      <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/</guid>
+      <description>Sequential 简而言之：nn.Sequential是Moudle的子类，它的构造方法接受一系列子模型作为输入。同时也定义了forward()方法，这是nn.Seq</description>
+    </item>
+    
+  </channel>
+</rss>

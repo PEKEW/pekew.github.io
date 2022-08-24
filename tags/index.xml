@@ -8,7 +8,25 @@
     <language>en</language>
     <copyright>&amp;copy; 2022&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 17 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pytorch</title>
+      <link>/tags/pytorch/</link>
+      <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sequential</title>
+      <link>/tags/sequential/</link>
+      <pubDate>Wed, 24 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sequential/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>leaf node</title>
       <link>/tags/leaf-node/</link>
@@ -24,15 +42,6 @@
       <pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/parameters/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pytorch</title>
-      <link>/tags/pytorch/</link>
-      <pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/pytorch/</guid>
       <description></description>
     </item>
     
