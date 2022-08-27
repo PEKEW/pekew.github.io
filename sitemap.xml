@@ -3,45 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/peikewang/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/ai/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/dl/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/modulelist/</loc>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/pytorch/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/pytorch/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/series/pytorch-learning/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/</loc>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/series/</loc>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/sequential/</loc>
     <lastmod>2022-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/series/</loc>
-    <lastmod>2022-08-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2022-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/leaf-node/</loc>

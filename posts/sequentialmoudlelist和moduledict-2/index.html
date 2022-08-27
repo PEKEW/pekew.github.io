@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Sequential,MoudleList,和ModuleDict 1 | PeiKeWang&#39;s WebSite</title>
+<title>Sequential,MoudleList,和ModuleDict 2 | PeiKeWang&#39;s WebSite</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -75,7 +75,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huea8837677a789ef35ad29240a1978919_1601044_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Sequential 简而言之：nn.Sequential是Moudle的子类，它的构造方法接受一系列子模型作为输入。同时也定义了forward()方法，这是nn.Seq">
+  content="MoudleList 和命名一样，ModuleList是有着Python List行为的Module类。他和Sequential最主要的区别在于需要自己实现forward方">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,8 +87,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Sequential,MoudleList,和ModuleDict 1",
-      "item":"/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/"}]
+      "name":"Sequential,MoudleList,和ModuleDict 2",
+      "item":"/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/"}]
 }
 </script>
 
@@ -100,11 +100,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/"
+        "@id": "/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/"
     },
-    "headline": "Sequential,MoudleList,和ModuleDict 1 | PeiKeWang\u0027s WebSite","datePublished": "2022-08-24T00:00:00+00:00",
-    "dateModified": "2022-08-24T00:00:00+00:00",
-    "wordCount":  1458 ,
+    "headline": "Sequential,MoudleList,和ModuleDict 2 | PeiKeWang\u0027s WebSite","datePublished": "2022-08-27T00:00:00+00:00",
+    "dateModified": "2022-08-27T00:00:00+00:00",
+    "wordCount":  1180 ,
     "author": {
         "@type": "Person",
         "name": ["PeiKeWang"]
@@ -117,21 +117,21 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "Sequential 简而言之：nn.Sequential是Moudle的子类，它的构造方法接受一系列子模型作为输入。同时也定义了forward()方法，这是nn.Seq"
+    "description": "MoudleList 和命名一样，ModuleList是有着Python List行为的Module类。他和Sequential最主要的区别在于需要自己实现forward方"
 }
-</script><meta property="og:title" content="Sequential,MoudleList,和ModuleDict 1 | PeiKeWang&#39;s WebSite" />
+</script><meta property="og:title" content="Sequential,MoudleList,和ModuleDict 2 | PeiKeWang&#39;s WebSite" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/" />
+<meta property="og:url" content="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/" />
 
 
 
 
-<meta property="og:description" content="Sequential 简而言之：nn.Sequential是Moudle的子类，它的构造方法接受一系列子模型作为输入。同时也定义了forward()方法，这是nn.Seq" />
+<meta property="og:description" content="MoudleList 和命名一样，ModuleList是有着Python List行为的Module类。他和Sequential最主要的区别在于需要自己实现forward方" />
 
 
 
@@ -148,10 +148,10 @@
 
 
 
-<meta property="article:published_time" content="2022-08-24T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-08-27T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-08-24T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-08-27T00:00:00&#43;00:00" />
 
 
 
@@ -160,7 +160,7 @@
 
 <meta property="article:tag" content="Pytorch" />
 
-<meta property="article:tag" content="Sequential" />
+<meta property="article:tag" content="ModuleList" />
 
 
 
@@ -170,9 +170,9 @@
 
 
 
-<meta property="og:see_also" content="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/" />
 
 
+<meta property="og:see_also" content="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/" />
 
 
 
@@ -262,7 +262,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">Sequential,MoudleList,和ModuleDict 1</h1>
+  <h1 class="mb-4">Sequential,MoudleList,和ModuleDict 2</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -270,7 +270,7 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2022-08-24</span
+      >2022-08-27</span
     >
   </div>
   <div class="me-6 my-2">
@@ -317,91 +317,91 @@
   
   
 
-  <h2 id="sequential">Sequential</h2>
-<p>简而言之：<code>nn.Sequential</code>是Moudle的子类，它的构造方法接受一系列子模型作为输入。同时也定义了<code>forward()</code>方法，这是<code>nn.Sequential</code>最大的特点，在其构造方法中传递的子类会被“链式”地计算输出。</p>
-<h3 id="构造方法">构造方法</h3>
-<p>观察<code>@overload</code>可以看到<code>Sequential</code>的构造方法接受两种形式的输入:</p>
-<pre><code class="language-python">    @overload
-    def __init__(self, *args: Module) -&gt; None:
-        ...
-
-    @overload
-    def __init__(self, arg: 'OrderedDict[str, Module]') -&gt; None:
-        ...
-
-    def __init__(self, *args):
-      # 具体实现
+  <h2 id="moudlelist"><code>MoudleList</code></h2>
+<p>和命名一样，<code>ModuleList</code>是有着<code>Python List</code>行为的<code>Module</code>类。他和<code>Sequential</code>最主要的区别在于需要自己实现<code>forward</code>方法，因为<code>Python List</code>本身也没有先后顺序，因此<code>ModuleList</code>也不存在<code>Sequential</code>那样的链式顺序。</p>
+<h2 id="构造方法">构造方法</h2>
+<p><code>ModuleList</code>的构造方法很简单也很直接，就是直接使用<code>+=</code>注册<code>moudles</code>：</p>
+<pre><code class="language-python">def __init__(self, modules: Optional[Iterable[Module]] = None) -&gt; None:
+  super(ModuleList, self).__init__()
+  if modules is not None:
+    self += modules
 </code></pre>
-<p>虽然有两种形式的构造方法，但其本质还是调用<code>super.add_module</code>以<code>OrderedDict</code>的形式添加子模型，如果传递的参数是<code>Module</code>类型，那就以其传递编号作为<code>key</code>：</p>
-<pre><code class="language-python"># 具体实现
-if len(args) == 1 and isinstance(args[0], OrderedDict):
-  for key, module in args[0].items():
-    self.add_module(key, module)
-  else:
-    for idx, module in enumerate(args):
-      self.add_module(str(idx), module)
+<h2 id="__iadd__和__add__"><code>__iadd__</code>和<code>__add__</code></h2>
+<p>构造方法里涉及到<code>MoudleList</code>的自加操作<code>+=</code>，也就是实现了<code>__iadd__</code>操作：</p>
+<pre><code class="language-python">def __iadd__(self, modules: Iterable[Module]) -&gt; 'ModuleList':
+  return self.extend(modules)
 </code></pre>
-<p>紧接着看<code>add_module()</code>的实现，也十分简单，就是做一些列的规范化判断，然后按照<code>key,value</code>的形式把子模型注册到类属性<code>_module</code>中：</p>
-<pre><code class="language-python">def add_module(self, name: str, module: Optional['Module']) -&gt; None:
-	# 一些规范化的判断，如name不能冲突，不能含有'.'之类的判断
-  self._modules[name] = module
+<p>这里调用了自身的<code>exrtend()</code>方法，实现如下：</p>
+<pre><code class="language-python">def extend(self, modules: Iterable[Module]) -&gt; 'ModuleList':
+  # 迭代类型判断
+  #  ..
+  offset = len(self)
+  for i, module in enumerate(modules):
+    self.add_module(str(offset + i), module)
+    return self
 </code></pre>
-<h3 id="其他魔术方法">其他魔术方法</h3>
-<h4 id="__getitem__-__setitem__-和__delitem__"><code>__getitem__</code>, <code>__setitem__</code>, 和<code>__delitem__</code></h4>
-<p>在介绍这三个魔术方法之前，需要先介绍一个关键方法<code>_get_item_by_idx(self, iterator, idx) -&gt; T</code></p>
-<pre><code class="language-python">def _get_item_by_idx(self, iterator, idx) -&gt; T:
-  &quot;&quot;&quot;Get the idx-th item of the iterator&quot;&quot;&quot;
-  size = len(self)
+<p>逻辑很简单，也是调用<code>super().add_module()</code>注册模型，这点在<code>Sequential</code>中已经讲过，不再赘述。</p>
+<p>接下来是对<code>__add__</code>的实现，这里用到了<code>itertools.chain()</code>返回<code>self</code>和需要被加对象的迭代器，然后返回一个新的<code>ModuleList()</code>，<code>chain()</code>的说明见：<a href="https://docs.python.org/zh-cn/3/library/itertools.html#module-itertools"><code>itertools</code></a></p>
+<pre><code class="language-python">def __add__(self, other: Iterable[Module]) -&gt; 'ModuleList':
+  combined = ModuleList()
+  for i, module in enumerate(chain(self, other)):
+    combined.add_module(str(i), module)
+    return combined
+</code></pre>
+<h3 id="__getitem__-__setitem__-和__delitem__"><code>__getitem__</code>, <code>__setitem__</code>, 和<code>__delitem__</code></h3>
+<p>和<code>Sequential</code>一样，这三个魔术方法的实现也依赖一个处理索引的函数<code> _get_abs_string_index</code>,其主要功能就是把用户传入的<code>idx:int in [-len(self), len(self)]</code>转换为<code>idx:str</code>：</p>
+<pre><code class="language-python">def _get_abs_string_index(self, idx):
+  &quot;&quot;&quot;Get the absolute index for the list of modules&quot;&quot;&quot;
   idx = operator.index(idx)
-  if not -size &lt;= idx &lt; size:
+  if not (-len(self) &lt;= idx &lt; len(self)):
     raise IndexError('index {} is out of range'.format(idx))
-    idx %= size
-    return next(islice(iterator, idx, None))
+    if idx &lt; 0:
+      idx += len(self)
+      return str(idx)
 </code></pre>
-<p>这个函数接收一个迭代对象和索引，返回<code>T,T = TypeVar('T', bound=Module)</code></p>
-<p>第一行先获取迭代对象的长度，第二行把索引转换为整数, 具体见<a href="https://docs.python.org/zh-cn/3/library/operator.html#module-operator"><code>operator</code></a>文档。</p>
-<p>最后使用<code>islice()</code>返回索引对应的元素，<code>islice()</code>见<a href="https://docs.python.org/zh-cn/3/library/itertools.html#module-itertools"><code>itertools</code></a>文档</p>
-<p><code>__getitem__()</code>方法返回一个<code>Sequential</code>或模型对象：</p>
-<pre><code class="language-python">def __getitem__(self, idx) -&gt; Union['Sequential', T]:
+<p><code>__getitem__</code>, <code>__setitem__</code>的逻辑和<code>Sequential</code>一样：</p>
+<pre><code class="language-python">def __getitem__(self, idx: int) -&gt; Union[Module, 'ModuleList']:
   if isinstance(idx, slice):
-    return self.__class__(OrderedDict(list(self._modules.items())[idx]))
+    return self.__class__(list(self._modules.values())[idx])
   else:
-    return self._get_item_by_idx(self._modules.values(), idx)
+    return self._modules[self._get_abs_string_index(idx)]
+
+  def __setitem__(self, idx: int, module: Module) -&gt; None:
+    idx = self._get_abs_string_index(idx)
+    return setattr(self, str(idx), module)
 </code></pre>
-<p>逻辑也很简单：先判断<code>idx</code>是不是<code>slice</code>对象，至于这个<code>slice</code>对象，其实就是<code>[start:stop:step]</code>操作，如果是<code>slice</code>对象，那就直接用<code>__class__</code>返回一个<code>Sequential</code>实例。如果不是<code>slice</code>对象，那就使用<code>self._get_item_by_idx()</code>返回<code>T</code>。注意<code>self._modules.values()</code>返回的是一个<code>dict_values</code>对象，而<code>_get_item_by_idx</code>中<code>next()</code>操作的是<code>islice</code>返回的可迭代对象。</p>
-<blockquote>
-<p>个人觉得这么做而不是直接用<code>list</code>相关操作的原因可能是处于效率的考虑</p>
-</blockquote>
-<p><code>__setitem__()</code>稍微绕一点：</p>
-<pre><code class="language-python">def __setitem__(self, idx: int, module: Module) -&gt; None:
-  key: str = self._get_item_by_idx(self._modules.keys(), idx)
-  return setattr(self, key, module)
-</code></pre>
-<p>最明显的“绕”其实是它也借助了<code>_get_item_by_idx</code>方法返回<code>key</code>,从上文可知,该方法的声明返回值<code>T</code>和<code>key</code>的类型声明<code>str</code>是不一致的。</p>
-<blockquote>
-<p>Python并不强行要求变量类型和声明一致，这些声明大多都是给人理解的。这种不匹配的类型声明尽管不会影响代码的正确性，但与其做这种混乱的声明,还不如不做。</p>
-</blockquote>
-<p>继续聊<code>__setitem__</code>的逻辑，实际上就是把<code>idx</code>的模型替换为<code>module</code>,但由于在构造方法中注册<code>module</code>时不只是序号索引作为<code>key</code>，也可能是用户指定的字符串，因此要先找到<code>idx</code>的位置，再拿到真正的<code>key</code>，再进行替换操作。</p>
-<p><code>__delitem__</code>和<code>__setitem__</code>逻辑类似。</p>
-<h3 id="其他魔术方法-1">其他魔术方法</h3>
-<p><code>__dir__</code>和<code>__iter__</code>没什么可说的</p>
-<h3 id="forward">forward</h3>
-<p><code>forward</code>定义了<code>Sequential</code>的链式计算过程，这个也是和<code>ModuleList</code>最显著的区别</p>
-<pre><code class="language-python">def forward(self, input):
-  for module in self:
-    input = module(input)
-    return input
+<p><code>__delitem__</code>就需要做一个额外操作：重新组织模型以保证子模型的编号正确</p>
+<pre><code class="language-python">def __delitem__(self, idx: Union[int, slice]) -&gt; None:
+  if isinstance(idx, slice):
+    for k in range(len(self._modules))[idx]:
+      delattr(self, str(k))
+    else:
+      delattr(self, self._get_abs_string_index(idx))
+      str_indices = [str(i) for i in range(len(self._modules))]
+      self._modules = OrderedDict(list(zip(str_indices, self._modules.values())))
 </code></pre>
 <blockquote>
-<p>个人不建议使用<code>input</code>，毕竟是关键字</p>
+<p>在读到这一段时有一个疑问：为什么<code>Sequential</code>和<code>ModuleList</code>都是维护字典形式的<code>_modules</code>，但一个需要重新组织序号，一个不需要？ 原因在于<code>Sequential</code>的逻辑都是以<code>key-value</code>进行的，而<code>ModuleList</code>的组织方式是<code>idx:int -&gt; idx:str</code>。其实<code>ModuleList</code>也可以用字典的形式组织，但索引的方式更符合<code>list</code>的行为。</p>
+<p>其实在实际生产中，我们可以结合<code>ModuleList</code>，<code>Sequential</code>和后文的<code>ModuleDict</code>组织一种更“动态”的模型，暂且叫它<code>ModuleChain</code>。这个后续有空会尝试一下。</p>
 </blockquote>
-<h3 id="append">append</h3>
-<p><code>append</code>就是在当前的模型列表后串联一个模型:</p>
-<pre><code class="language-python">def append(self, module: Module) -&gt; 'Sequential':
+<h2 id="其他魔术方法">其他魔术方法</h2>
+<p><code>__dir__</code>没什么可说的:</p>
+<pre><code class="language-python">def __dir__(self):
+  keys = super(ModuleList, self).__dir__()
+  keys = [key for key in keys if not key.isdigit()]
+  return keys
+</code></pre>
+<h3 id="列表行为方法">列表行为方法</h3>
+<p>作为一个具有列表行为的模型，最主要也是最常用的方法<code>append</code>和<code>insert</code>也很直观，就是在尾部插入和在中间移位插入:</p>
+<pre><code class="language-python">def insert(self, index: int, module: Module) -&gt; None:
+  for i in range(len(self._modules), index, -1):
+    self._modules[str(i)] = self._modules[str(i - 1)]
+    self._modules[str(index)] = module
+</code></pre>
+<pre><code class="language-python">def append(self, module: Module) -&gt; 'ModuleList':
   self.add_module(str(len(self)), module)
   return self
 </code></pre>
-<p>不过这个函数的实现默认<code>key</code>为最新的索引顺序，可以根据需求重构为传入指定<code>key</code></p>
 
 </article>
 
@@ -411,7 +411,7 @@ if len(args) == 1 and isinstance(args[0], OrderedDict):
     
     <a href="/tags/pytorch/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Pytorch</a>
     
-    <a href="/tags/sequential/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Sequential</a>
+    <a href="/tags/modulelist/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ModuleList</a>
     
 </div>
       
@@ -480,16 +480,11 @@ if len(args) == 1 and isinstance(args[0], OrderedDict):
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >Previous</span
-        >
-        <a href="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/" class="block">Sequential,MoudleList,和ModuleDict 2</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">Next</span>
-        <a href="/posts/%E5%9C%A8pytroch%E4%B8%AD%E6%85%8E%E7%94%A8list/" class="block">在Pytorch中慎用list</a>
+        <a href="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/" class="block">Sequential,MoudleList,和ModuleDict 1</a>
       
     </div>
   </div>
@@ -534,17 +529,16 @@ if len(args) == 1 and isinstance(args[0], OrderedDict):
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#sequential">Sequential</a>
+    <li><a href="#moudlelist"><code>MoudleList</code></a></li>
+    <li><a href="#构造方法">构造方法</a></li>
+    <li><a href="#__iadd__和__add__"><code>__iadd__</code>和<code>__add__</code></a>
       <ul>
-        <li><a href="#构造方法">构造方法</a></li>
-        <li><a href="#其他魔术方法">其他魔术方法</a>
-          <ul>
-            <li><a href="#__getitem__-__setitem__-和__delitem__"><code>__getitem__</code>, <code>__setitem__</code>, 和<code>__delitem__</code></a></li>
-          </ul>
-        </li>
-        <li><a href="#其他魔术方法-1">其他魔术方法</a></li>
-        <li><a href="#forward">forward</a></li>
-        <li><a href="#append">append</a></li>
+        <li><a href="#__getitem__-__setitem__-和__delitem__"><code>__getitem__</code>, <code>__setitem__</code>, 和<code>__delitem__</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#其他魔术方法">其他魔术方法</a>
+      <ul>
+        <li><a href="#列表行为方法">列表行为方法</a></li>
       </ul>
     </li>
   </ul>
@@ -566,6 +560,9 @@ if len(args) == 1 and isinstance(args[0], OrderedDict):
         class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
       >
         <h3>See Also</h3>
+        
+          <a href="/posts/sequentialmoudlelist%E5%92%8Cmoduledict-1/" class="no-underline">Sequential,MoudleList,和ModuleDict 1</a>
+          <br />
         
           <a href="/posts/%E5%9C%A8pytroch%E4%B8%AD%E6%85%8E%E7%94%A8list/" class="no-underline">在Pytorch中慎用list</a>
           <br />

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ModuleList on PeiKeWang&#39;s WebSite</title>
+    <link>/tags/modulelist/</link>
+    <description>Recent content in ModuleList on PeiKeWang&#39;s WebSite</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2022&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 27 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/modulelist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sequential,MoudleList,和ModuleDict 2</title>
+      <link>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/</link>
+      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-2/</guid>
+      <description>MoudleList 和命名一样，ModuleList是有着Python List行为的Module类。他和Sequential最主要的区别在于需要自己实现forward方</description>
+    </item>
+    
+  </channel>
+</rss>
