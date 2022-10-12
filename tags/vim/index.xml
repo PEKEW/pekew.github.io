@@ -8,7 +8,16 @@
     <language>en</language>
     <copyright>&amp;copy; 2022&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 17:59:08 +0800</lastBuildDate><atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>把所有typing Work优雅地迁移至vim VIM完全配置</title>
+      <link>/posts/%E6%8A%8A%E6%89%80%E6%9C%89typing-work%E4%BC%98%E9%9B%85%E5%9C%B0%E8%BF%81%E7%A7%BB%E8%87%B3vim-vim%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 12 Oct 2022 17:59:08 +0800</pubDate>
+      
+      <guid>/posts/%E6%8A%8A%E6%89%80%E6%9C%89typing-work%E4%BC%98%E9%9B%85%E5%9C%B0%E8%BF%81%E7%A7%BB%E8%87%B3vim-vim%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE/</guid>
+      <description>文末贴上了完整的配置文件 以下前置工作，必要选项为红色字体，可选项为蓝色字体 如果使用Mac OS, 推荐直接使用MacVIM， 否则使用NeoVIM。整体上配置方</description>
+    </item>
+    
     <item>
       <title>把所有typing Work优雅地迁移至vim VIM完全配置 Unix</title>
       <link>/%E6%8A%8A%E6%89%80%E6%9C%89typing-work%E4%BC%98%E9%9B%85%E5%9C%B0%E8%BF%81%E7%A7%BB%E8%87%B3vim-vim%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE-unix/</link>
