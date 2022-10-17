@@ -3,22 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/peikewang/</loc>
-    <lastmod>2022-10-12T17:59:08+08:00</lastmod>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
+  </url><url>
+    <loc>/categories/ai/</loc>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
   </url><url>
     <loc>/authors/</loc>
-    <lastmod>2022-10-12T17:59:08+08:00</lastmod>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2022-10-12T17:59:08+08:00</lastmod>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
+  </url><url>
+    <loc>/tags/machine-learning/</loc>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2022-10-12T17:59:08+08:00</lastmod>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2022-10-12T17:59:08+08:00</lastmod>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
+  </url><url>
+    <loc>/series/</loc>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2022-10-12T17:59:08+08:00</lastmod>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
+  </url><url>
+    <loc>/series/zhihuazhou-machinelearning-reading/</loc>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
+  </url><url>
+    <loc>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2022-10-17T23:20:43+08:00</lastmod>
   </url><url>
     <loc>/tags/vim/</loc>
     <lastmod>2022-10-12T17:59:08+08:00</lastmod>
@@ -34,9 +49,6 @@
   </url><url>
     <loc>/%E6%8A%8A%E6%89%80%E6%9C%89typing-work%E4%BC%98%E9%9B%85%E5%9C%B0%E8%BF%81%E7%A7%BB%E8%87%B3vim-vim%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE-unix/</loc>
     <lastmod>2022-10-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/ai/</loc>
-    <lastmod>2022-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/dl/</loc>
     <lastmod>2022-08-29T00:00:00+00:00</lastmod>
@@ -54,9 +66,6 @@
     <lastmod>2022-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-3/</loc>
-    <lastmod>2022-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/series/</loc>
     <lastmod>2022-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/modulelist/</loc>
