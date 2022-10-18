@@ -28,15 +28,6 @@
     </item>
     
     <item>
-      <title>把所有typing Work优雅地迁移至vim VIM完全配置 Unix</title>
-      <link>/%E6%8A%8A%E6%89%80%E6%9C%89typing-work%E4%BC%98%E9%9B%85%E5%9C%B0%E8%BF%81%E7%A7%BB%E8%87%B3vim-vim%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE-unix/</link>
-      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/%E6%8A%8A%E6%89%80%E6%9C%89typing-work%E4%BC%98%E9%9B%85%E5%9C%B0%E8%BF%81%E7%A7%BB%E8%87%B3vim-vim%E5%AE%8C%E5%85%A8%E9%85%8D%E7%BD%AE-unix/</guid>
-      <description>详细的~/.vimrc 配置放在了文末 前置工作 一下前置工作，必要选项为红色字体，可选项为蓝色字体 如果使用Mac OS, 推荐直接使用MacVIM， 否则使用Neo</description>
-    </item>
-    
-    <item>
       <title>Sequential,MoudleList,和ModuleDict 3</title>
       <link>/posts/sequentialmoudlelist%E5%92%8Cmoduledict-3/</link>
       <pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate>
