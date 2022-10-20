@@ -8,7 +8,16 @@
     <language>en</language>
     <copyright>&amp;copy; 2022&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 17 Oct 2022 23:20:43 +0800</lastBuildDate><atom:link href="/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2022 22:40:23 +0800</lastBuildDate><atom:link href="/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>西瓜书 学习笔记 线性模型</title>
+      <link>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 19 Oct 2022 22:40:23 +0800</pubDate>
+      
+      <guid>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</guid>
+      <description>总的来说，线性模型分为线性回归模型和线性分类模型，线性模型指的是我们试图学习到一个属性的线性组合来进行预测的函数以完成不同的任务，个人认为，线性模型是</description>
+    </item>
+    
     <item>
       <title>西瓜书 学习笔记 前置知识</title>
       <link>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>

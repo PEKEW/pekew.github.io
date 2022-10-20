@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>西瓜书 学习笔记 线性模型 | PeiKeWang&#39;s WebSite</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="/js/fontawesome.min.de149ff7f2ddc05cb4e1c473c0407f178365bb605dcfbe7d298e9d0164cc1894411633d430e3f8f0be1d5f02d4ca7497.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_huea8837677a789ef35ad29240a1978919_1601044_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huea8837677a789ef35ad29240a1978919_1601044_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="总的来说，线性模型分为线性回归模型和线性分类模型，线性模型指的是我们试图学习到一个属性的线性组合来进行预测的函数以完成不同的任务，个人认为，线性模型是">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"西瓜书 学习笔记 线性模型",
+      "item":"/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"
+    },
+    "headline": "西瓜书 学习笔记 线性模型 | PeiKeWang\u0027s WebSite","datePublished": "2022-10-19T22:40:23+08:00",
+    "dateModified": "2022-10-19T22:40:23+08:00",
+    "wordCount":  2257 ,
+    "author": {
+        "@type": "Person",
+        "name": ["PeiKeWang"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "WANG Chucheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "总的来说，线性模型分为线性回归模型和线性分类模型，线性模型指的是我们试图学习到一个属性的线性组合来进行预测的函数以完成不同的任务，个人认为，线性模型是"
+}
+</script><meta property="og:title" content="西瓜书 学习笔记 线性模型 | PeiKeWang&#39;s WebSite" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" />
+
+
+
+
+<meta property="og:description" content="总的来说，线性模型分为线性回归模型和线性分类模型，线性模型指的是我们试图学习到一个属性的线性组合来进行预测的函数以完成不同的任务，个人认为，线性模型是" />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="PeiKeWang&#39;s WebSite" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-10-19T22:40:23&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-10-19T22:40:23&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="Machine Learning" />
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" />
+
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">PeiKeWang&#39;s WebSite</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Docs</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">西瓜书 学习笔记 线性模型</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-10-19</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>5 min read</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="/categories/ai/" class="hover:text-eureka"
+          >AI</a
+        >
+      
+    </div>
+  
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-th-list me-1"></i>
+      
+        <a href="/series/zhihuazhou-machinelearning-reading/" class="hover:text-eureka"
+          >ZhiHuaZhou-MachineLearning-Reading</a
+        >
+      
+    </div>
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>总的来说，线性模型分为线性回归模型和线性分类模型，线性模型指的是我们试图学习到一个属性的线性组合来进行预测的函数以完成不同的任务，个人认为，线性模型是最简单的机器学习模型，但其思想能够代表一众复杂的机器学习模型。</p>
+</blockquote>
+<p>我们首先给出线性模型的一般(或者叫广义)线性模型的定义:<br>
+$$y = g(\omega^Tx+b)$$
+其中,$g$连续，单调可微分且充分光滑。$g$起到的作用类似于激活函数，给模型一个非线性的映射。值得注意的是，很多人会把线性模型的线性理解为学习到的目标函数，或者模型在解空间的映射必须是一条直线，但我们自己阅读线性模型的文字部分定义就不难发现：线性模型中的线性指的是“特征”的线性组合，而和解空间形状无关。</p>
+<p>线性模型形式简单，建模方便，可解释性好，一定程度上是非线性模型的基础。</p>
+<h2 id="线性模型用于回归任务">线性模型用于回归任务</h2>
+<p>用于回归任务的线性模型叫做线性回归。用公式表示为：
+$$f(x_i) = \omega x_i + b_i$$
+其中,$\omega,b$是线性模型的参数，对线性模型的学习或训练过程就是对这两个参数估计的过程。</p>
+<h3 id="最小二乘法">最小二乘法</h3>
+<p>对参数的估计过程实际上就是找到最合适的参数，使得线性模型的输出值和真实值之间的差别尽可能小，衡量这种差别最常用的方法是均方误差。我们完成均方误差的最小化实际上就完成了对线性模型的参数估计。</p>
+<p>最小二乘法指的是基于均方误差最小化来求解模型参数的方法。</p>
+<p>由于均方误差构造了一个关于$\omega, b$的凸函数，因此可以求得最优闭式解。</p>
+<blockquote>
+<p>关于最小二乘法的推导过程暂且不表（打字太多）</p>
+</blockquote>
+<h2 id="线性模型的分类问题">线性模型的分类问题</h2>
+<p>考虑二分类问题，我们常设置分类阈值，当预测结果大于阈值时为某一类，而小于某阈值时为另一类。这是十分直观的做法，因此，基于这个思路，我们需要对分类模型的输出加以调整，使其满足分类要求。理想情况下，我们只要输出0/1即可完成二分类，于是最理想的激活函数为线性阶跃函数:
+$$y = \begin{cases} 0, z &lt; 0 \ 0.5,z=0 \ 1,z&gt;0 \end{cases}$$</p>
+<p>显然，这个函数不连续，那只能退而求其次。最简单的，我们可以试图把模型的输出压缩到[0,1]区间，这样输出结果可以代表样本属于某个类的概率。基于这样的思路，我们在分类问题中常用S函数代替线性阶跃函数。
+$$y = \frac{1}{1+e^{-z}}, z = \omega^Tx+b$$
+对上式进行恒等变换，左侧变为$ln\frac{y}{1-y}$。上文提到，我们把模型的输出结果看作是属于某个类的概率，或者说“可能性”。那$ln\frac{y}{1-y}$可以看做两个类别的相对可能性，称为&quot;几率&quot;,取对数则为对数几率。</p>
+<h3 id="对数几率回归">对数几率回归</h3>
+<p>对数几率回归实际上是一种线性回归模型变化而来的分类模型。有几大优点：</p>
+<ul>
+<li>对可能性直接建模，无需假设分布，避免了假设不准确带来的问题。</li>
+<li>不仅是预测类别，而是预测概率。</li>
+<li>对数几率是任意阶可到的凸函数，数学性质好。有很多数值优化方法可以直接求解最优解。</li>
+</ul>
+<h4 id="对数几率回归的参数估计">对数几率回归的参数估计</h4>
+<p>把对数几率回归的模型中的输出$y$作为后验概率估计，则其可以变形为:
+$$ln\frac{p(y=1|x)}{p(y=0|x)} = \omega^Tx+b$$
+对应地:
+$$p(y=1|x) = \frac{e^{\omega^Tx+b}}{1+e^{\omega^Tx+b}}$$
+$$p(y=0|x) = \frac{1}{1+e^{\omega^Tx+b}}$$
+可以通过最大似然法对参数进行估计。 在此略。</p>
+<h3 id="线性判别分析">线性判别分析</h3>
+<p>线性判别分析的基本思想很简单，把数据映射到一条直线上，使得不同类别之间的差距（类间距）尽可能大，而相同类之间的差距（类内距）尽可能小。</p>
+<p>先考虑怎么衡量类内距和类间距，类间距很简单：两个类别投影的中心点之间的差距:
+$$|\omega^T\mu_0 - \omega^T\mu_1|$$
+其中,$\mu_0,\mu_1$是两个类别投影过后的中心点。$\omega$是映射变化。
+至于类内距，我们考虑协方差矩阵，协方差可以衡量两个的总体误差，所以使用协方差矩阵来衡量类内距:
+$$\omega^T\Sigma_0\omega + \omega^T\Sigma_1\omega$$
+线性判别分析的目的是类内距小，类间距大，即如下最小化：
+$$\min J = \frac{\omega^T(\Sigma_0+\Sigma_1)\omega}{|\omega^T\mu_0 - \omega^T\mu_1|}$$</p>
+<p>这个优化目标可以改写成一个瑞利商的形式。使用拉格朗日乘子法求解最优映射。（过程略）
+需要注意的是，线性判别分析只关注映射的方向，并不考虑大小。</p>
+<p>当线性判别分析用于多分类时，原本的$\omega$变为投影矩阵，其闭式解是$N-1$维的，因此，线性判别分析也可以用来降维，是一种经典的监督降维技术。</p>
+<h3 id="多分类">多分类</h3>
+<blockquote>
+<p>多分类任务其实可以使用二分类模型来解决多分类问题。</p>
+</blockquote>
+<p>可以把多分类的多个类别拆解为多个二分类的问题。经典的策略有三种：</p>
+<ul>
+<li>一对一：两两组合,分别作为正反例，预测时先产生所有的分类器的预测结果，然后进行投票。</li>
+<li>一对其余：一类作为正例，其余作为反例。相比于一对一方法，一对其余的拆分方法需要训练的模型更少，但每个模型训练开销更多。预测性能和一对一不相上下。</li>
+<li>多对多：若干为正，若干为反，而且正反类的设计需要进行特殊的构造。不能随意。经典的多对多技术有ECOC（纠错输出码），纠错输出码能够对分类器的错误有一定的容忍和修正能力。一般来说，对于同一个分类任务，编码越长，纠错能力越长，需要训练的分类器也就越多。</li>
+</ul>
+<h3 id="类别不平衡问题">类别不平衡问题</h3>
+<p>在一般的二分类问题中，我们常设置0.5为判别阈值，这隐藏了一个假设，即就是我们认为训练样本中的正例和反例分布是一致的，实际上经常会遇到分类类别不平衡的问题，有如下解决方案：</p>
+<ul>
+<li>再缩放：实际上也是代价敏感学习。设置阈值为训练样本中的正例和反例的比例，实际上再缩放的本质是我们假设观测几率代表真是几率。</li>
+<li>欠采样：去除反例，使得正反样本数量接近，但是欠采样可能会丢失一些重要要本，使得丢失重要信息。典型的欠采样方法是利用集成学习机制，划分若干个集合供不同的模型训练，对于这些模型来说，都是欠采样处理的。</li>
+<li>过采样：和欠采样相反，过采样是增加一些正例，使得正反例样本数量接近。但开销也大，而且不能简单地进行重复采样，否则会严重过拟合，因此，经典的过采样方法是进行插值以生成额外的正例。</li>
+<li>阈值移动：在预测过程中使用再缩放，因为简单的再缩放的假设“无偏采样”很难做到。</li>
+</ul>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="/tags/machine-learning/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Machine Learning</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+        <div class="py-2">
+  
+    <div class="my-8 flex flex-col items-center md:flex-row">
+      <a href="/authors/peikewang/" class="md:me-4 text-primary-text h-24 w-24">
+        
+        
+          <img
+            src="/images/icon.png"
+            class="bg-primary-bg w-full rounded-full"
+            alt="Avatar"
+          />
+        
+      </a>
+      <div class="mt-4 w-full md:mt-0 md:w-auto">
+        <a
+          href="/authors/peikewang/"
+          class="mb-2 block border-b pb-1 text-lg font-bold"
+        >
+          <h3>PeiKe Wang</h3>
+        </a>
+        <span class="block pb-2">artificial intelligence | machine learning | deep learning | optimization theory.</span>
+        
+          
+          
+          
+          
+          <a href="mailto:pekewang@hotmail.com" class="me-2">
+            <i class="fas fa-envelope"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://github.com/PEKEW" class="me-2">
+            <i class="fab fa-github"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://weibo.com/u/6981005635" class="me-2">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">Next</span>
+        <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" class="block">西瓜书 学习笔记 前置知识</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+          
+<div class="bg-secondary-bg prose max-w-none rounded p-6">
+  <h3>Series of Posts</h3>
+  
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" class="no-underline">西瓜书 学习笔记 线性模型</a>
+      <br />
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" class="no-underline">西瓜书 学习笔记 前置知识</a>
+      <br />
+    
+  
+</div>
+
+        
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>See Also</h3>
+        
+          <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" class="no-underline">西瓜书 学习笔记 前置知识</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2022</a>
+  </p>
+</div></div>
+    </footer>
+  </body>
+</html>
