@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>西瓜书 学习笔记 神经网络 | PeiKeWang&#39;s WebSite</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="/js/fontawesome.min.de149ff7f2ddc05cb4e1c473c0407f178365bb605dcfbe7d298e9d0164cc1894411633d430e3f8f0be1d5f02d4ca7497.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_huea8837677a789ef35ad29240a1978919_1601044_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huea8837677a789ef35ad29240a1978919_1601044_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="神经网络在人工智能中的地位越来越高，应用也越来越广泛。现在大多数AIer张口神经网络闭口模型调参，且不说多少人能够触及本质，实际上绝大多数AI从业者连">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"西瓜书 学习笔记 神经网络",
+      "item":"/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
+    },
+    "headline": "西瓜书 学习笔记 神经网络 | PeiKeWang\u0027s WebSite","datePublished": "2022-10-24T21:40:14+08:00",
+    "dateModified": "2022-10-24T21:40:14+08:00",
+    "wordCount":  4654 ,
+    "author": {
+        "@type": "Person",
+        "name": ["PeiKeWang"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "WANG Chucheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "神经网络在人工智能中的地位越来越高，应用也越来越广泛。现在大多数AIer张口神经网络闭口模型调参，且不说多少人能够触及本质，实际上绝大多数AI从业者连"
+}
+</script><meta property="og:title" content="西瓜书 学习笔记 神经网络 | PeiKeWang&#39;s WebSite" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" />
+
+
+
+
+<meta property="og:description" content="神经网络在人工智能中的地位越来越高，应用也越来越广泛。现在大多数AIer张口神经网络闭口模型调参，且不说多少人能够触及本质，实际上绝大多数AI从业者连" />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="PeiKeWang&#39;s WebSite" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-10-24T21:40:14&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-10-24T21:40:14&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="Machine Learning" />
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%B3%E7%AD%96%E6%A0%91/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" />
+
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">PeiKeWang&#39;s WebSite</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">Posts</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Docs</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">西瓜书 学习笔记 神经网络</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-10-24</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>10 min read</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="/categories/ai/" class="hover:text-eureka"
+          >AI</a
+        >
+      
+    </div>
+  
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-th-list me-1"></i>
+      
+        <a href="/series/zhihuazhou-machinelearning-reading/" class="hover:text-eureka"
+          >ZhiHuaZhou-MachineLearning-Reading</a
+        >
+      
+    </div>
+  
+</div>
+
+
+  
+  
+
+  <blockquote>
+<p>神经网络在人工智能中的地位越来越高，应用也越来越广泛。现在大多数AIer张口神经网络闭口模型调参，且不说多少人能够触及本质，实际上绝大多数AI从业者连反向传播的过程都一知半解，上手就是Pytorch和TensorFlow，ResNet或Transformer只能做到写代码套用。他们不需要了解模型原理和本质，只需要知道这些模型似乎是“万能钥匙”。 AIer的浮躁和知其然不追其所以然的态度让人看不到AI行业到底有多少是空中阁楼。</p>
+</blockquote>
+<h2 id="基本形式">基本形式</h2>
+<p>神经网络的基本组成单元是神经元，神经元在神经网络中有这前后的偏序关系，具体的，神经元是一个这样的计算过程: 一个神经元接受与其相关的其他神经元的输出作为输入，每两个相关的神经元之间有特定的权重，当前神经元接受与其相关的其他神经元的输出作为输入,并乘以的对应的权重，最后经过一个非线性的激活函数计算输出结果。（大多数情况下，权重计算后还要计算当前神经元的偏置项，偏置项可以理解为某种激活阈值，也可以理解为一种丰富神经元表达的手段）。</p>
+<h3 id="激活函数">激活函数</h3>
+<p>激活函数表达了神经元对自身的计算结果兴奋或抑制的程度，与前文类似，最理想的激活函数是阶跃函数，但这种函数性质不好（不光滑，不连续）。因此，同样的思路，我们用类似Sigmoid的S函数作为激活函数，实际上，神经网络发展到现在，激活函数的形式也五花八门，例如Sigmoid，relu等。他们基本上都是为了解决其他激活函数存在的某些问题而提出的（如梯度消失）。在激活函数的选择上，应该针对特定问题特定选择，没有万能的激活函数，只有适合某任务的常用激活函数。</p>
+<h2 id="感知机">感知机</h2>
+<p>感知机就是两层神经元组成的神经网络。很容易实现与或非得逻辑运算，因为与或非问题实际上是线性可分的。已经有证明：感知机在面对线性可分的问题时，其学习过程一定会收敛。反之，如果问题模式不可分，则感知机的学习过程会发生震荡，如异或问题。</p>
+<h2 id="多层前馈神经网络">多层前馈神经网络</h2>
+<p>为了解决非线性可分问题，需要使用更多层的神经元。我们把具有多层神经元的网络模型叫多层前馈神经网络，简称前馈网络，把前馈网络中非输出和非输入的网络层叫做隐藏层。已经有证明：只需要一个足够多神经元的隐藏层，前馈网络就能以任意精度逼近任意复杂的连续函数。</p>
+<p>模型的学习表达能力提升，带来的是参数的不好确定，多层感知机且可以通过输出和真实值的差距来更新权重。但面对前馈网络这种比较复杂的网络结构，多层感知机的权重更新方法就显得捉襟见肘。</p>
+<h2 id="span-stylecolorred反向传播算法span"><span style="color:red">反向传播算法</span></h2>
+<p>反向传播算法是专门用于解决复杂神经网络中参数更新问题的算法。说他是目前最重要的算法都不为过，乐村（忘了是谁）曾评价反向传播算法是AI发展以来最有影响力的算法之一。有必要好好聊一下：</p>
+<p>考虑这样一个神经网络：输入层为$x_1,x_2,\dots,x_d$, 包含$(K)$个隐藏层，其节点为$o^{(k)}_1,o^{(k)}_2,\dots,o^{(k)}<em>H$, 输出层为$y_1,y_2,\dots,y_J$，网络权重表示为$w^{(k)}</em>{i,j}$，表示第$k$层的第$i$个节点到第$k+1$层的第$j$个节点的权重。神经网络的误差使用均方误差:$\mathcal{L} = \frac12 \sum_j^J(\hat{y}_j-y_j)$，其中$\hat{y}$为数据标签。激活函数使用Sigmoid，记为$f(\cdot)$.</p>
+<p>我们使用梯度下降算法来对网络参数$w,b$进行更新，因此需要求得他们的梯度, 不失一般性，首先考虑最后一个隐藏层$k=K$到输出层的权重，即$w^{(k)}_{hj}$：</p>
+<p>$$\nabla w^k_{hj} = \nabla_{w^k_{hj}} \mathcal{L}$$</p>
+<p>根据链式法则：</p>
+<p>$$\nabla w^k_{hj} = \nabla_{y_j} \mathcal{L} \nabla_{o^k_j} y_j \nabla_{w^k_{hj}} o_j^k$$</p>
+<p>其中,$o_j^k = \sum_h z^k_h w^k_{hj}$，即神经元计算过程的加权求和部分, 而$z^k_h$表示$k-1$层到当前节点$h$的输入.
+展开计算得到:
+$$\nabla w^k_{hj} = (\hat{y}<em>j - y_j)y_j(1-y_j)z^k</em>{h}$$
+记$(\hat{y}<em>j - y_j)y_j(1-y_j) = g$，则$\nabla w^k</em>{hj} = gz^k_{h}$</p>
+<p>类似的可以计算最后一个隐藏层的偏置梯度：</p>
+<p>$$\nabla b^k = g$$</p>
+<p>然后考虑倒数第二层和倒数第一隐藏层，实际上计算过程没差别，只是多了一个求和符号（因为相比于最后一层和输出节点之间的计算只牵扯到一层运算，这两层之间的权重在后续的计算中是参与到最后一层和输出层的每个连接的，这里文字不好理解，后续我会补图说明）：</p>
+<p>$$\nabla w^{k-1}<em>{h_1,h} = \sum_j^J \nabla</em>{y_j} \mathcal{L} \nabla_{o^k_j} y_j \nabla_{z^k_h} o_j^{k-1} \nabla_{w^{k-1}_{h_1,h}} o^{k-1}_j$$</p>
+<p>和前文相同的计算过程：</p>
+<p>$$\nabla w^{k-1}<em>{h_1,h} = (\hat{y}<em>j - y_j)y_j(1-y_j)w^k</em>{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$
+$$\nabla w^{k-1}</em>{h_1,h} = gw^k_{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$</p>
+<p>偏置类似，在此略。
+后续类似，在此略。</p>
+<p>可以看出，从前往后计算的过程中总有一部分计算已经提前算了，从而大幅节省了计算开销。这样的思路在动态规划，贝尔曼方程中很常见。</p>
+<p>以上即就是反向传播过程。更新时我们只需要让参数沿着梯度的反方向更新一段距离即可，这段距离常被学习率$\eta$控制。</p>
+<p>以上的反向传播过程只用到了一个样例，即就是标准的反向传播算法的每次更新只针对一个样例。这样的参数更新会很频繁，而且震荡明显，因此因删除了累计反向传播算法，即就是在遍历完一次全部数据集后，才会进行反向传播，这样使得参数的更新频率低得多。但在很多任务中，累计更新的方法会在多次更新后，进一步的更新变得十分缓慢。这时候针对单个阳历的标准反向传播算法反而能取得更好的解，这种现象在数据集变大之后语愈发明显。</p>
+<p>标准反向传播和累计反向传播的区别类似于随机梯度下降和累计梯度下降之间的区别。</p>
+<h2 id="神经网络结构的设计">神经网络结构的设计</h2>
+<p>神经网络的结构设计仍然是一个值得研究的问题，标准的前馈神经网络如何设置隐藏层个数，深度学习中的卷积神经网络如何设置卷积核大小，堆叠，循环神经网络如何设计激活函数等。目前常用的方法仍然是试错法，也就是人们常说的炼丹问题。
+实际上，设计性能优秀的网络解构属于AutoML的范围，AutoML包括超参数搜索和神经网络结构搜索等，近几年大火的NAS也是AutoML的一个分支。</p>
+<h2 id="过拟合">过拟合</h2>
+<p>前文提到，神经网络有能力以任意精度拟合任意复杂度的连续曲线，然而这种强大的拟合能力往往伴随着过拟合现象。因此如何缓解过拟合问题是神经网络研究的一个主要部分.</p>
+<p>目前常用的有两种防止过拟合的策略，第一种是早停。即就是在训练集误差降低而验证集误差升高时，停止训练过程，返回具有最小验证误差的模型。同时，早停法在动态神经网络里也有很多用处。第二种反方法即就是正则化技术，正则化技术的基本思想是在误差函数中增加一个用于描述网络复杂度的惩罚项。比如连接权重和阈值的平方和等，目的是在优化网络参数的同时尽可能让网络模型简单，从而降低网络对于某些局部特征的学习能力。</p>
+<h2 id="全局最小和局部最小">全局最小和局部最小</h2>
+<p>神经网络参数调整的过程是一个十分复杂的优化问题，更进一步地，更复杂的神经网络模型的参数优化过程可能是一个不连续，不可微，非凸，不透明，昂贵的优化问题。常用的梯度下降算法显然很容易求得局部最优。因此，如何跳出局部最优达到全局最优仍然是一个研究热点</p>
+<p>一般来说，跳出全局最优的方法有如下几种策略：</p>
+<ul>
+<li>多次初始化： 通过不同初始值的参数，使得优化过程从不同的初始点开始搜索，能在一定程度上避免局部最小值。</li>
+<li>模拟退火：以一定概率接受比当前解更差的结果，有主于跳出局部最优解，而这个概率随迭代的过程减小，可以保证算法的稳定收敛。</li>
+<li>随机梯度下降：加入随机因素，有机会使得在局部极小点时梯度不为0，从而跳出局部最小点。</li>
+<li>和随机梯度下降类似的各种算法，如动量梯度，Adam等。</li>
+<li>遗传算法：启发式的全局随机搜索算法。</li>
+</ul>
+<p>装值得注意的是，上述大多数策略理论性还缺乏保障，思路原理均来自于启发式。</p>
+<h2 id="其他类型的神经网络">其他类型的神经网络</h2>
+<h3 id="rbf网络">RBF网络</h3>
+<p>RBF即Radial Basis Function，RBF是一种单隐层前馈神经网络，使用径向基函数作为隐藏层的激活函数，而输出层是隐层输出的线性组合。其中，RBF是某种沿着径向堆成的标量函数，通常定义为样本到数据中心之间欧式距离的单调函数。常用高斯径向基函数:</p>
+<p>$$\rho(x_i,c_i) = e^{-\beta_i|x_i-c_i|}$$</p>
+<p>通常使用两步过程来训练RBF网络：使用随机采样、聚类的方法确定神经元的中心，然后使用反向传播算法确定其他参数。</p>
+<h3 id="art网络">ART网络</h3>
+<p>ART网络，自适应谐振理论网络是竞争学习的代表。竞争学习指的是神经网络中一种常用的无监督学习策略，网络的输出神经元相互竞争，只有竞争获胜的神经元才会被激活，而其他的神经元状态被抑制。</p>
+<p>ART网络有比较层，识别层，识别阈值和重置模块构成。比较层负责接收样本，并传递给识别层，识别层的每个神经元都对应一个模式类，且可以在训练过程中动态增加。
+当识别层接收到输入信号后，识别层的神经元之间相互竞争以获得神获胜神经元，竞争方式可以是衡量输入向量和每个识别层神经元对应的模式类之间的距离，距离最小的获胜。若输入向量和获胜神经元之的代表向量相似度大于识别阈值，则输入样本被归为神经元所属的类别。
+同时，网络的权重会被更新，使得以后再接收到相似输入的样本时该模式类会计算出更大的相似度。若不大于识别阈值，增在识别层增设一个新的盛景园，代表增加一个新的类别，代表向量被设置为当前的输入向量。</p>
+<p>显然，识别阈值对ART网络的性能有很大的影响，当识别阈值较高时，输入样本会被分成的类别比较多，比较精细的模式类，反之，则会产生比较少，比较粗糙的模式类。</p>
+<p>ART比较好的缓解了竞争学习中的可塑性-稳定性窘境，可塑性指的是神经网络要有学习新知识的能力，稳定性则只神经网络对就只是的记忆。ART的增量学习可以很好的缓解竞争性稳定性窘境。</p>
+<h3 id="som网络">SOM网络</h3>
+<p>SOM即自组织映射，SOM网络也是一种竞争学习类型的无监督神经网络，它能够将高维数据映射到地位空间，同时保持输入数据在高维空间的拓扑结构。</p>
+<h3 id="级联相关神经网络">级联相关神经网络</h3>
+<p>级联相关神经网络类似于AutoML，刚开始训练时只有输入层和输出增。在训练过程中不断增加隐藏层节点，此时，新加入的节点的输入端权重是固定的，而输出端的权重通过最大化当前神经元的输出和网络误差之间的相关性来训练的。</p>
+<p>级联神经网络的训练速度较快，而且不需要提前设置网络结构相关的超参数，但其在在数据较小的时候容易陷入过拟合。</p>
+<h3 id="boltzmann机">Boltzmann机</h3>
+<p>玻尔兹曼机是随机神经网络和循环神经网络的一种。</p>
+<p>玻尔兹曼机的图像是一个全连接图. 每条无向边都表示一对依赖关系. 玻尔兹曼机可被视作随机过程的，可生成的相应的Hopfield神经网络。它是最早能够学习内部表达，并能表达和（给定充足的时间）解决复杂的组合优化问题的神经网络。但是，没有特定限制连接方式的玻尔兹曼机目前为止并未被证明对机器学习的实际问题有什么用。所以它目前只在理论上显得有趣。然而，由于局部性和训练算法的赫布性质，以及它们和简单物理过程相似的并行性，如果连接方式是受约束的（即受限玻尔兹曼机），学习方式在解决实际问题上将会足够高效。</p>
+<h3 id="受限玻尔兹曼机">受限玻尔兹曼机</h3>
+<p>受限玻尔兹曼机规定玻尔兹曼机的结构是二部图，使得玻尔兹曼机的实际应用成为可能，常用对比散度算法进行训练。</p>
+<p>受限玻尔兹曼机是玻尔兹曼机和马尔科夫随机场的一种特例。这些概率图模型可以对应到因子分析。</p>
+<p>受限玻兹曼机也可被用于深度学习网络。具体地，深度信念网络可使用多个受限玻尔兹曼机堆叠而成，并可使用梯度下降法和反向传播算法进行调优.</p>
+<h2 id="深度学习">深度学习</h2>
+<p>理论上来说，参数越多的模型复杂度越高，容量越大，越容易完成学习任务，但也更容易陷入过拟合。但大量的训练数据可以降低过拟合的风险，这边是深度学习代表的复杂模型受到人们关注的背景。</p>
+<p>最早的训练深度模型的方法是预训练+微调，理论上就是块坐标下降法的思想。另一种节省训练开销的策略是权重共享，最典型的代表为CNN中的卷积核参数的训练过程。</p>
+<p>从另一个角度来看，深度学习模型其实就是通过特殊的深度的设计网络，对训练数据做特征工程，然后用模型最后的分类器等简单模型完成复杂的学习任务。</p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="/tags/machine-learning/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Machine Learning</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+        <div class="py-2">
+  
+    <div class="my-8 flex flex-col items-center md:flex-row">
+      <a href="/authors/peikewang/" class="md:me-4 text-primary-text h-24 w-24">
+        
+        
+          <img
+            src="/images/icon.png"
+            class="bg-primary-bg w-full rounded-full"
+            alt="Avatar"
+          />
+        
+      </a>
+      <div class="mt-4 w-full md:mt-0 md:w-auto">
+        <a
+          href="/authors/peikewang/"
+          class="mb-2 block border-b pb-1 text-lg font-bold"
+        >
+          <h3>PeiKe Wang</h3>
+        </a>
+        <span class="block pb-2">artificial intelligence | machine learning | deep learning | optimization theory.</span>
+        
+          
+          
+          
+          
+          <a href="mailto:pekewang@hotmail.com" class="me-2">
+            <i class="fas fa-envelope"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://github.com/PEKEW" class="me-2">
+            <i class="fab fa-github"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://weibo.com/u/6981005635" class="me-2">
+            <i class="fab fa-weibo"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">Next</span>
+        <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%B3%E7%AD%96%E6%A0%91/" class="block">西瓜书 学习笔记 决策树</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+          
+<div class="bg-secondary-bg prose max-w-none rounded p-6">
+  <h3>Series of Posts</h3>
+  
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="no-underline">西瓜书 学习笔记 神经网络</a>
+      <br />
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%B3%E7%AD%96%E6%A0%91/" class="no-underline">西瓜书 学习笔记 决策树</a>
+      <br />
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" class="no-underline">西瓜书 学习笔记 线性模型</a>
+      <br />
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" class="no-underline">西瓜书 学习笔记 前置知识</a>
+      <br />
+    
+  
+</div>
+
+        
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>See Also</h3>
+        
+          <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%B3%E7%AD%96%E6%A0%91/" class="no-underline">西瓜书 学习笔记 决策树</a>
+          <br />
+        
+          <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" class="no-underline">西瓜书 学习笔记 线性模型</a>
+          <br />
+        
+          <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" class="no-underline">西瓜书 学习笔记 前置知识</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2022</a>
+  </p>
+</div></div>
+    </footer>
+  </body>
+</html>
