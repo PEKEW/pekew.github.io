@@ -168,6 +168,14 @@
 
 
 
+<meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" />
+
+
+
 
 
 <meta property="og:see_also" content="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%B3%E7%AD%96%E6%A0%91/" />
@@ -335,8 +343,8 @@ $$\nabla w^k_{hj} = (\hat{y}<em>j - y_j)y_j(1-y_j)z^k</em>{h}$$
 <p>然后考虑倒数第二层和倒数第一隐藏层，实际上计算过程没差别，只是多了一个求和符号（因为相比于最后一层和输出节点之间的计算只牵扯到一层运算，这两层之间的权重在后续的计算中是参与到最后一层和输出层的每个连接的，这里文字不好理解，后续我会补图说明）：</p>
 <p>$$\nabla w^{k-1}<em>{h_1,h} = \sum_j^J \nabla</em>{y_j} \mathcal{L} \nabla_{o^k_j} y_j \nabla_{z^k_h} o_j^{k-1} \nabla_{w^{k-1}_{h_1,h}} o^{k-1}_j$$</p>
 <p>和前文相同的计算过程：</p>
-<p>$$\nabla w^{k-1}<em>{h_1,h} = (\hat{y}<em>j - y_j)y_j(1-y_j)w^k</em>{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$
-$$\nabla w^{k-1}</em>{h_1,h} = gw^k_{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$</p>
+<p>$$\nabla w^{k-1}_{h_1,h} = (\hat{y}<em>j - y_j)y_j(1-y_j)w^k</em>{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$</p>
+<p>$$\nabla w^{k-1}<em>{h_1,h} = gw^k</em>{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$</p>
 <p>偏置类似，在此略。
 后续类似，在此略。</p>
 <p>可以看出，从前往后计算的过程中总有一部分计算已经提前算了，从而大幅节省了计算开销。这样的思路在动态规划，贝尔曼方程中很常见。</p>
@@ -464,6 +472,11 @@ $$\nabla w^{k-1}</em>{h_1,h} = gw^k_{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$</p>
   >
     <div>
       
+        <span class="text-primary-text block font-bold"
+          >Previous</span
+        >
+        <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" class="block">西瓜书 学习笔记 支持向量机</a>
+      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
@@ -486,6 +499,12 @@ $$\nabla w^{k-1}</em>{h_1,h} = gw^k_{hj}z_h^k(1-z_h^k)z^{k-1}{h-1}$$</p>
 <div class="bg-secondary-bg prose max-w-none rounded p-6">
   <h3>Series of Posts</h3>
   
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="no-underline">西瓜书 学习笔记 集成学习</a>
+      <br />
+    
+      <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" class="no-underline">西瓜书 学习笔记 支持向量机</a>
+      <br />
     
       <a href="/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="no-underline">西瓜书 学习笔记 神经网络</a>
       <br />

@@ -8,7 +8,25 @@
     <language>en</language>
     <copyright>&amp;copy; 2022&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 24 Oct 2022 21:40:14 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Nov 2022 16:34:32 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>西瓜书 学习笔记 集成学习</title>
+      <link>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 21 Nov 2022 16:34:32 +0800</pubDate>
+      
+      <guid>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</guid>
+      <description>基本思想 集成学习的基本思想是十分直接的，即就是通过多个单一的模型组合得到的集成模型具有更好的泛化性能. 集成学习的一般结构为：先产生一组基学习器，针对每</description>
+    </item>
+    
+    <item>
+      <title>西瓜书 学习笔记 支持向量机</title>
+      <link>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</link>
+      <pubDate>Fri, 04 Nov 2022 18:01:39 +0800</pubDate>
+      
+      <guid>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</guid>
+      <description>在学习西瓜书写下这些笔记的过程中，有许多的公式推导，目前只是我在笔记本上手写了一遍，后续有时间会放上来 基本形式 首先要明确支持向量机的基本原理：给定一个</description>
+    </item>
+    
     <item>
       <title>西瓜书 学习笔记 神经网络</title>
       <link>/posts/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
